@@ -1,160 +1,63 @@
-یک پروژه‌ی مدیریت کلینیک که به‌صورت مرحله‌ای با تمرکز بر **Software Engineering، Database، Backend و AI Automation** توسعه داده می‌شود.
+Clinic Management System
 
-> A clinic management system built step by step with a focus on Software Engineering, databases, backend development, and future AI automation.
+A practical clinic management project built step by step with **PostgreSQL, SQL, Python, FastAPI, and REST APIs**.
+
+This project is part of my journey toward becoming a **Software Engineer focused on Backend Development and AI Systems**.
+
+The goal is not only to build a clinic database, but to understand how a real software system is designed and developed from the database layer to the backend API and, later, automation and AI-powered systems.
 
 ---
 
 ##  درباره پروژه
 
-این پروژه از یک دیتابیس ساده‌ی کلینیک شروع شده و به‌مرور به یک سیستم واقعی و قابل توسعه تبدیل خواهد شد.
+این پروژه را از صفر و به صورت مرحله‌به‌مرحله برای مدیریت اطلاعات یک کلینیک طراحی کردم.
 
-در نسخه فعلی، تمرکز روی طراحی دیتابیس و ارتباط بین اطلاعات بیماران، نوبت‌ها و پیگیری‌های بعد از درمان است.
+هدف اصلی این پروژه یادگیری عملی مفاهیم **Software Engineering، Backend Development، Database Design و API Development** است.
 
-### ساختار فعلی
+در این پروژه ابتدا دیتابیس را طراحی کردم، سپس اطلاعات واقعی آزمایشی وارد کردم و بعد یک Backend با Python و FastAPI ساختم تا بتواند از طریق API با PostgreSQL ارتباط برقرار کند.
 
-Patient
-   ↓
-Appointment
-   ↓
-Follow-up
+در مراحل بعدی قرار است قابلیت‌های بیشتری مثل مدیریت نوبت‌ها، پیگیری بیماران، Authentication، تست، Docker و در نهایت Automation و AI به سیستم اضافه شوند.
 
 ---
 
-## 🗄️ Database
+# 🧠 What Does This Project Do?
 
-Database این پروژه با **PostgreSQL** ساخته شده است.
+In simple terms:
 
-### Tables
+The system stores and manages clinic information such as:
 
-- `patients`
-  - اطلاعات پایه بیمار
-  - نام
-  - شماره تلفن
-  - زمان ایجاد رکورد
-
-- `appointments`
-  - نوبت بیمار
-  - تاریخ و ساعت
-  - نوع درمان
-  - ارتباط با بیمار از طریق `patient_id`
-
-- `follow_ups`
-  - پیگیری بعد از درمان
-  - تاریخ پیگیری
-  - وضعیت
-  - یادداشت
-  - ارتباط با appointment
-
-### مفاهیمSQL تمرین‌شده
-
-- `CREATE TABLE`
-- `INSERT`
-- `SELECT`
-- `UPDATE`
-- `DELETE`
-- `WHERE`
-- `JOIN`
-- `ORDER BY`
-- `COUNT`
-- `GROUP BY`
-- `HAVING`
-- Primary Key
-- Foreign Key
-- Table Relationships
-
----
-
-## 📁 ساختار فعلی پروژه
-
-01-sql-postgresql/
-├── practice.sql
-└── seed.sql
-
-- `practice.sql` → ساختار دیتابیس و جدول‌ها
-- `seed.sql` → داده‌های نمونه پروژه
-
----
-
-## 🚀 Development Roadmap
-
-### Phase 1 — Database ✅
-
-- PostgreSQL
-- Database Schema
 - Patients
+- Patient contact information
 - Appointments
-- Follow-ups
-- SQL Queries
-- Table Relationships
+- Treatments
+- Future follow-up information
 
-### Phase 2 — Backend 🔜
+The long-term goal is to turn this database into a complete clinic management system with:
 
-- Python
-- FastAPI
-- REST API
-- PostgreSQL Integration
-- CRUD Endpoints
-
-### Phase 3 — Frontend 🔜
-
-- Web Interface
-- Patient Management
-- Appointment Management
-- Follow-up Management
-- Dashboard
-
-### Phase 4 — Automation & AI 🔜
-
-- Automated Patient Follow-ups
-- Appointment Reminders
-- AI-assisted Communication
-- AI Agent Integration
-- Business Automation
+- Backend API
+- Frontend
+- Patient management
+- Appointment management
+- Follow-up management
+- Authentication
+- Automation
+- AI-assisted workflows
 
 ---
 
-## 🎯 هدف پروژه
+# 🏗️ Current Architecture
 
-هدف این پروژه فقط ساخت یک دیتابیس نیست.
+The current system works approximately like this:
 
-هدف این است که یک سیستم واقعی را به‌صورت مرحله‌ای از:
-
-Database
-   ↓
-Backend
-   ↓
-REST API
-   ↓
-Frontend
-   ↓
-Automation
-   ↓
-AI
-
-طراحی و توسعه بدهم.
-
----
-
-## 📌 Project Status
-
-🚧 **Work in Progress**
-
-### Current Version
-
-`v0.1 — Database Layer`
-
-Database layer completed.
-
-Backend/API development will be added in the next phase.
-
----
-
-## 🛠️ Technologies
-
-- PostgreSQL
-- SQL
-- Python
-- FastAPI (Planned)
-- Git
-- GitHub
-- AI / Automation (Planned)
+```text
+User / Browser / Swagger
+          ↓
+        HTTP
+          ↓
+       FastAPI
+          ↓
+        Python
+          ↓
+         SQL
+          ↓
+     PostgreSQL
